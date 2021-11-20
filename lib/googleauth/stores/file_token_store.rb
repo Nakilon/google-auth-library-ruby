@@ -32,7 +32,7 @@ module Google
 
         # (see Google::Auth::Stores::TokenStore#load)
         def load id
-          @store.transaction { @store[id] }
+          @store.transaction(true) { @store[id] }
         end
 
         # (see Google::Auth::Stores::TokenStore#store)
